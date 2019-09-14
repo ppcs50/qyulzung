@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}
+Previous Decision
+{% endblock %}
+{% block content %}
+
+<div class="form-group">
+    <h5>"{{ journal.topic }}"</h5>
+    <small class="text-muted">{{ journal.date }}</small>
+    <hr>
+    <small class="text-muted">Criteria: {{ journal.cr1 }} / {{ journal.cr2 }} / {{ journal.cr3 }}</small>
+
+    <div class="result_alt">
+        <h6>{{ journal.alt1 }}</h6>
+        <h3>Score: {{ journal.alt1sco }}</h3>
+    </div>
+
+    <div class="result_alt">
+        <h6>{{ journal.alt2 }}</h6>
+        <h3>Score: {{ journal.alt2sco }}</h3>
+    </div>
+
+    <div class="result_alt">
+        <h6>{{ journal.alt3 }}</h6>
+        <h3>Score: {{ journal.alt3sco }}</h3>
+    </div>
+
+    {% if journal.comment %}
+    <div class="result_alt">
+        <h6>{{ journal.comment }}</h6>
+    </div>
+    {% else %}
+    <h6>No comment on this Decision.</h6>
+    {% endif %}
+    <hr>
+    <form action="{% url 'post' arg1=user arg2=journal.id %}" method="post">
+        {% csrf_token %}
+    <input class="btn btn-secondary btn-sm" type="submit" value="Post">
+    <a name="{{ journal.id }}" class="btn btn-secondary btn-sm" href="{% url 'delete' arg1=journal.id %}" role="button">Delete</a>
+    </form>
+
+</div>
+
+{% endblock %}

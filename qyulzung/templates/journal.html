@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}
+Journal
+{% endblock %}
+{% block content %}
+
+<div class="form-group history">
+    <h5>Your History of Decisions</h5>
+    <hr>
+    <div class="journal_list">
+        {% csrf_token %}
+            {% for x in qz %}
+        <div class="row">
+            <div class="col"><a href="{% url 'journals' arg1=user arg2=x.id %}" value="{{ x.id }}" >{{ x }}</a></div>
+            <div class="col-md-auto"><a name="{{ x.id }}" class="btn btn-link btn-sm black" href="{% url 'delete' arg1=x.id %}" role="button">&times;</a></div>
+        </div>
+            {% empty %}
+        <td>No Previous Decision.</td>
+        {% endfor %}
+    </table>
+    </div>
+</div>
+
+{% endblock %}

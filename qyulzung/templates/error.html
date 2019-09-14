@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}
+Error
+{% endblock %}
+{% block content %}
+
+<div class="form-group">
+  <div class="alert alert-warning" role="alert">
+  <h3>Error</h3>
+  <hr>
+    {{ message }}
+  </div>
+  <div class="buttons">
+    <a class="btn btn-outline-secondary" href="{% url 'index' %}">Main</a>
+  </div>
+</div>
+
+{% endblock %}

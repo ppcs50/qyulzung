@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form-group">
+  <div class="login-form">
+  <h3>Welcome!</h3>
+  <h5>Please log in first for using our Website.</h5>
+  <hr>
+    {% if form.errors %}
+      <p style="color: red">Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <form method="post">
+      {% csrf_token %}
+      <div class="input-group input-group-sm mb-3">
+      <input type="hidden" class="form-control" name="next" value="{{ next }}" />
+      </div>
+      {% for field in form %}
+        <p>
+          {{ field.label_tag }}<br>
+          {{ field }}<br>
+          {% for error in field.errors %}
+            <p class="error">{{ error }}</p>
+          {% endfor %}
+        </p>
+      {% endfor %}
+      <button type="submit" class="btn btn-primary">Log in</button>
+      <a class="btn btn-link" href="{% url 'signup' %}"> or Sign up</a>
+    </form>
+  </div>
+</div>
+
+<div class="what">
+    <div class="row">
+        <div class="col">
+            <small>Welcome to Qyulzung! Have you ever heard about this word before? I guess not, since it's not a familiar word as "<a class="kimchi" href="https://en.wikipedia.org/wiki/Kimchi">Kimchi</a>".</small>
+            <small>It is literally means 'Decision'. Just pronunciate it whatever you want, and when you met some Korean friends, ask how properly pronunciate. They will gladly teach you and definitely smile while you trying to pronunciate. :)</small>
+        </div>
+        <div class="col">
+            <small>This is a web application for a decision-making worksheet, based on the famous rational decision-making model.</small>
+            <small>It's very simple and there is no Magic. It just provides you a step by step form and calculate what you input, and save it to our account, so that whenever you want you can review your previous decision history.</small>
+        </div>
+        <div class="col">
+            <small>Also, if you want you can post your Decision log to the board. It is opened to public. Share your decision and take advantage of inspiring by someone else's one, that is the main purpose of this application.</small>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <div class="sns">
+    <div class="btn-group" role="group">
+        <input type="submit" class="btn btn-outline-light btn-sm" value="facebook"></input>
+        <input type="submit" class="btn btn-outline-light btn-sm" value="instagram"></input>
+        <input type="submit" class="btn btn-outline-light btn-sm" value="e-mail"></input>
+    </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+Success
+{% endblock %}
+{% block content %}
+<div class="form-group">
+  <div class="alert alert-success" role="alert">
+  <h3>Success!</h3>
+  <hr>
+    {{ message }}
+  </div>
+  <div class="buttons">
+    <a class="btn btn-outline-secondary" href="{% url 'index' %}">Main</a>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}
+Step 1: Generate Alternatives
+{% endblock %}
+{% block content %}
+
+<div class="form-group">
+    <div class="progress">
+      <div class="progress-bar bg-dark" style="width: 20%" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br>
+    <h2>"{{ topic }}"</h2>
+    <hr>
+    <form action="{% url 'step2' user %}" method="post">
+        {% csrf_token %}
+        <h5>Generate Alternatives</h5>
+        <small class="text-muted">What can be alternatives of this decision?</small><br>
+        <small class="text-muted">e.g. What to eat dinner?:</small>
+        <hr>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">1</span>
+            </div>
+            <input name="alt1" type="text" class="form-control" placeholder="Korean food" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">2</span>
+            </div>
+            <input name="alt2" type="text" class="form-control" placeholder="Lobster" required>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">3</span>
+            </div>
+            <input name="alt3" type="text" class="form-control" placeholder="Pinnochio's Pizza" required>
+        </div>
+        <input class="btn btn-secondary btn-sm" type="submit" value="Next">
+    </form>
+</div>
+
+{% endblock %}

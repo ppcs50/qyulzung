@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}
+Board
+{% endblock %}
+{% block content %}
+
+{% csrf_token %}
+    {% if qz %}
+    {% for x in qz %}
+    <div class="form-group board">
+
+        <h5 class="topic">"{{ x.topic }}"</h5>
+        <small class="text-muted">post by {{ x.user.first_name }}</small>
+        <small class="text-muted">- {{ x.date }}</small>
+        <hr>
+        <small class="text-muted">Criteria: {{ x.cr1 }} / {{ x.cr2 }} / {{ x.cr3 }}</small>
+        <div class="result_alt">
+            <h6>{{ x.alt1 }}</h6>
+            <h3>Score: {{ x.alt1sco }}</h3>
+        </div>
+        <div class="result_alt">
+            <h6>{{ x.alt2 }}</h6>
+            <h3>Score: {{ x.alt2sco }}</h3>
+        </div>
+        <div class="result_alt">
+            <h6>{{ x.alt3 }}</h6>
+            <h3>Score: {{ x.alt3sco }}</h3>
+        </div>
+            {% if x.comment %}
+            <div class="comment">
+            <p>{{ x.comment }}</p>
+            </div>
+            {% else %}
+            <h6>No comment on this Decision.</h6>
+            {% endif %}
+
+            {% if user == x.user %}
+            <a name="{{ x.id }}" class="btn btn-link btn-sm custom3" href="{% url 'unpost' arg1=user arg2=x.id %}" role="button">&times;</a>
+            {% endif %}
+        <hr>
+        <hr>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h6>No journal has been posted yet.</h6>
+    <hr>
+{% endif %}
+
+{% endblock %}

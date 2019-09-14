@@ -1,0 +1,296 @@
+header {
+  padding : 10px;
+  height: auto;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: right;
+}
+
+body {
+  background: url("/static/imgs/background.jpg") 50% 0 no-repeat fixed;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #DC143C;
+}
+
+table tr td {
+  padding: 5px;
+}
+
+.comment {
+  text-align: left;
+}
+
+.comments {
+  margin: auto;
+  height: 200px;
+  width: 80%;
+}
+
+.title {
+  font-weight: bold;
+}
+.login-form {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100%;
+  padding: 15px;
+  margin: 100px auto 150px auto;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.signup-form {
+ margin: auto auto 50px auto;
+}
+
+.login-form .btn.btn-primary {
+  background: #000000 none repeat scroll 0 0;
+  border-color: #000000;
+  color: #ffffff;
+  font-size: 14px;
+  width: 95px;
+  line-height: 45px;
+  padding: 0;
+}
+
+.error {
+  color: red;
+}
+
+.buttons {
+  margin: 100px auto auto auto;
+}
+
+.main-div {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 50px auto auto auto;
+  max-width: 80%;
+  padding: 70px 20px 70px 20px;
+  text-align: center;
+}
+
+.about {
+  background: #ffffff none repeat scroll 0 0;
+  border-radius: 2px;
+  margin: 50px auto auto auto;
+  max-width: 50%;
+  padding: 70px 20px 70px 20px;
+  text-align: center;
+}
+
+.meaning {
+  margin: auto;
+  max-width: 80%;
+  text-align: center;
+}
+
+.form-group {
+  background-color: rgba( 255, 255, 255, 0.9 );
+  margin: auto auto 130px auto;
+  padding: 50px 20px 100px 20px;
+  width: 75%;
+  text-align: center;
+}
+
+.custom1 {
+  margin: auto;
+  width: 70px !important;
+}
+
+.custom2 {
+  float: right;
+  margin: auto 50px auto auto;
+}
+
+.step4 {
+  padding: 20px;
+  width: 80%;
+  text-align: left;
+  margin: auto;
+}
+
+/*side nav bar css(reference:https://www.w3schools.com/howto/howto_js_sidenav.asp)*/
+body {
+    font-family: "Lato", "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.modal {
+  color: black;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+}
+
+.progress{
+  width: 50%;
+  margin: auto;
+  height: 5px;
+}
+
+.text-muted {
+  font-family: "Lucida Console", Monaco, monospace;
+}
+
+.custom2 {
+  font-size: 60% !important;
+}
+
+.result_alt {
+  margin: auto;
+  text-align: center;
+  padding: 40px;
+  width: 70%;
+  height: auto;
+}
+
+.journal_list {
+  font-weight: bold;
+  line-height: 2;
+}
+
+.container img {
+  margin: auto;
+  width: 80%;
+  height: auto;
+}
+
+.board {
+   background-color: rgba( 0, 0, 0, 0.7 );
+   color: white;
+   max-width: 800px !important;
+   padding: 30px;
+}
+
+.board small {
+     color: white !important;
+}
+
+.topic {
+  font-style: italic;
+  font-weight: bold;
+}
+
+.hangul_logo {
+  width: 200px;
+}
+
+.what {
+  margin: auto;
+  background-color: black;
+
+  color: white;
+  padding: 100px 50px 150px 50px;
+}
+.step {
+  font-style: italic;
+}
+
+.right {
+  text-align: right;
+}
+
+.history{
+  width: 70%;
+  text-align: left;
+}
+
+.kimchi {
+  color: white;
+  font-weight: bold;
+}
+
+.sns {
+  margin: auto !important;
+  text-align: center !important;
+}
+
+.black {
+  color: black !important;
+}
+
+@media only screen and (max-height: 700px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+  .login-form{
+    margin: 70px auto 150px auto;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .custom1 {
+    margin: auto;
+    width: 50px !important;
+  }
+
+  .form-group {
+  background-color: rgba( 255, 255, 255, 0.9 );
+  margin: auto auto 100px auto;
+  padding: 5px;
+  width: 85%;
+  text-align: center;
+  }
+
+  .what {
+    padding: 70px 20px 70px 20px;
+  }
+
+  .board {
+     background-color: rgba( 0, 0, 0, 0.7 );
+     padding: 15px;
+  }
+
+  .history{
+  width: 90%;
+  text-align: left;
+  }
+}

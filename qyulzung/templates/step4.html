@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+{% block title %}
+Step 4: Evaluate Alternatives
+{% endblock %}
+{% block content %}
+<div class="form-group">
+
+<div class="progress">
+  <div class="progress-bar bg-dark" style="width: 80%" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<br>
+
+    <h2>"{{ qz.topic }}"</h2>
+    <hr>
+    <h5>Evaluate Alternatives.</h5>
+    <small class="text-muted">Consider about your Criteria, what points you want to put on each alternative?</small>
+    <hr>
+
+    <form action="{% url 'result' user %}" method="post">
+        {% csrf_token %}
+
+        <h5>1. {{ qz.alt1 }}</h5>
+        <hr>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr1 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score1_1" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr2 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score1_2" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr3 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score1_3" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h5>2. {{ qz.alt2 }}</h5>
+        <hr>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr1 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score2_1" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr2 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score2_2" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr3 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score2_3" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h5>3. {{ qz.alt3 }}</h5>
+        <hr>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr1 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score3_1" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr2 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score3_2" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+            {{ qz.cr3 }}
+            </div>
+            <div class="col">
+                <div class="input-group mb-3 custom1">
+                  <select name="score3_3" class="custom-select">
+                            {% for i in range %}
+                              <option value="{{ i }}">{{ i }}</option>
+                            {% endfor %}
+                  </select>
+                </div>
+            </div>
+        </div>
+        <input class="btn btn-secondary btn-sm" type="submit" value="Next">
+    </form>
+</div>
+{% endblock %}

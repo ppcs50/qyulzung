@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}
+Result
+{% endblock %}
+{% block content %}
+<div class="form-group">
+
+    <div class="progress">
+      <div class="progress-bar bg-dark" style="width: 100%"role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br>
+
+    <h1>Result</h1>
+    <h2>Topic: {{ qz.topic }}</h2>
+    <hr>
+
+    <div class="result_alt">
+        <h6>{{ qz.alt1 }}</h6>
+        <h3>Score: {{ alt1sco }}</h3>
+        <small class="text-muted">{{ qz.cr1 }}: {{ score1_1 }} / {{ qz.cr2 }}: {{ score1_2 }} / {{ qz.cr3 }}: {{ score1_3 }}</small>
+    </div>
+
+    <div class="result_alt">
+        <h6>{{ qz.alt2 }}</h6>
+        <h3>Score: {{ alt2sco }}</h3>
+        <small class="text-muted">{{ qz.cr1 }}: {{ score2_1 }} / {{ qz.cr2 }}: {{ score2_2 }} / {{ qz.cr3 }}: {{ score2_3 }}</small>
+    </div>
+
+    <div class="result_alt">
+        <h6>{{ qz.alt3 }}</h6>
+        <h3>Score: {{ alt3sco }}</h3>
+        <small class="text-muted">{{ qz.cr1 }}: {{ score3_1 }} / {{ qz.cr2 }}: {{ score3_2 }} / {{ qz.cr3 }}: {{ score3_3 }}</small>
+    </div>
+
+
+    <form action="{% url 'comment' user %}" method="post">
+        {% csrf_token %}
+        <div class="input-group">
+             <textarea name="comments" class="comments" placeholder=" leave any thoughts or comments on this decision ... "></textarea>
+        </div>
+    <hr>
+    <div class="inline">
+        <input class="btn btn-secondary btn-sm" type="submit" value="Save">
+    </form>
+    <a name="{{ x.id }}" class="btn btn-secondary btn-sm" href="{% url 'delete' arg1=qz.id %}" role="button">Delete</a>
+    </div>
+</div>
+{% endblock %}
